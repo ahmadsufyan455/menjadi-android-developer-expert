@@ -8,6 +8,8 @@ import com.fyndev.moviecatalogue.core.data.source.remote.RemoteDataSource
 import com.fyndev.moviecatalogue.core.data.source.remote.service.ApiEndpoint
 import com.fyndev.moviecatalogue.core.domain.repository.IMovieRepository
 import com.fyndev.moviecatalogue.core.utils.AppExecutors
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -19,10 +21,14 @@ import java.util.concurrent.TimeUnit
 val databaseModule = module {
     factory { get<MovieDatabase>().movieDao() }
     single {
+        val passphrase: ByteArray = SQLiteDatabase.getBytes("fyndev".toCharArray())
+        val factory = SupportFactory(passphrase)
         Room.databaseBuilder(
             androidContext(),
             MovieDatabase::class.java, "the_movie.db"
-        ).fallbackToDestructiveMigration().build()
+        ).fallbackToDestructiveMigration()
+            .openHelperFactory(factory)
+            .build()
     }
 }
 
