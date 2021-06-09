@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_favorite">Favorite</string>
+    <string name="no_data">No Data</string>
+    <string name="image_poster">Image Poster</string>
+</resources>

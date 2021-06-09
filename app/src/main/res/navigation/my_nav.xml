@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/movieFragment">
+
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.fyndev.moviecatalogue.home.movie.MovieFragment"
+        android:label="Movies"
+        tools:layout="@layout/fragment_movie">
+        <action
+            android:id="@+id/action_movieFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/tvFragment"
+        android:name="com.fyndev.moviecatalogue.home.tv.TvFragment"
+        android:label="Tv Show"
+        tools:layout="@layout/fragment_tv">
+        <action
+            android:id="@+id/action_tvFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.fyndev.moviecatalogue.favorite.FavoriteFragment"
+        android:label="Favorite"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_detailFragment2"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.fyndev.moviecatalogue.detail.DetailFragment"
+        android:label="Detail Movie"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="state"
+            app:argType="string"
+            android:defaultValue="MOVIE" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteMovieFragment"
+        android:name="com.fyndev.moviecatalogue.favorite.movie.FavoriteMovieFragment"
+        android:label="fragment_favorite_movie"
+        tools:layout="@layout/fragment_favorite_movie" />
+    <fragment
+        android:id="@+id/favoriteTvShowFragment"
+        android:name="com.fyndev.moviecatalogue.favorite.tvshow.FavoriteTvShowFragment"
+        android:label="fragment_favorite_tv_show"
+        tools:layout="@layout/fragment_favorite_tv_show" />
+</navigation>
