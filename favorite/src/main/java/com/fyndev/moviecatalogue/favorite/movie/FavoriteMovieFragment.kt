@@ -42,6 +42,7 @@ class FavoriteMovieFragment : Fragment() {
             if (favMovie != null && favMovie.isNotEmpty()) {
                 favoriteMovieAdapter.setData(favMovie)
                 binding.tvNoData.visibility = View.GONE
+                binding.lottieEmpty.visibility = View.GONE
             }
         })
 

@@ -18,4 +18,9 @@
         <item name="colorControlNormal">@color/gold</item>
         <item name="colorControlActivated">@color/gold</item>
     </style>
+
+    <style name="RatingBarPlaceHolder" parent="Theme.MaterialComponents">
+        <item name="colorControlNormal">@color/shimmer</item>
+        <item name="colorControlActivated">@color/shimmer</item>
+    </style>
 </resources>

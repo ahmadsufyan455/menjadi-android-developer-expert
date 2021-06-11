@@ -42,6 +42,7 @@ class FavoriteTvShowFragment : Fragment() {
             if (favTvShow != null && favTvShow.isNotEmpty()) {
                 favoriteTvShowAdapter.setData(favTvShow)
                 binding.tvNoData.visibility = View.GONE
+                binding.lottieEmpty.visibility = View.GONE
             }
         })
 

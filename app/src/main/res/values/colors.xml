@@ -7,4 +7,5 @@
     <color name="blue">#2196F3</color>
     <color name="blue_dark">#0069C0</color>
     <color name="gold">#FFD700</color>
+    <color name="shimmer">#DDDDDD</color>
 </resources>

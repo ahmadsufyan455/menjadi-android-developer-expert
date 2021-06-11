@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.fyndev.moviecatalogue
 
 import android.app.Application
