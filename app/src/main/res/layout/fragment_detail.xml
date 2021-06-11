@@ -8,12 +8,16 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
 
         <ImageView
             android:id="@+id/ivBackdrop"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="225dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:contentDescription="@string/backdrop_movie"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"

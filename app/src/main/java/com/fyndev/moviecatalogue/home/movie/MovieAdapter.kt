@@ -46,6 +46,8 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
                 transformations(RoundedCornersTransformation(10f))
             }
             binding.tvTitle.text = movieEntity.title
+            binding.ratingBar.rating = (movieEntity.vote_average / 2).toFloat()
+            binding.tvRating.text = String.format("%.1f", (movieEntity.vote_average / 2))
             binding.tvDescription.text = movieEntity.overview
         }
     }

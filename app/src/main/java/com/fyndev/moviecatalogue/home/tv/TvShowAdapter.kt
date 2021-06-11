@@ -46,6 +46,8 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.ViewHolder>() {
                 transformations(RoundedCornersTransformation(10f))
             }
             binding.tvTitle.text = tvShow.name
+            binding.ratingBar.rating = (tvShow.vote_average / 2).toFloat()
+            binding.tvRating.text = String.format("%.1f", (tvShow.vote_average / 2))
             binding.tvDescription.text = tvShow.overview
         }
     }

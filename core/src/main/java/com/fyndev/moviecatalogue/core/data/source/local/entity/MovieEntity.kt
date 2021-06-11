@@ -22,7 +22,7 @@ data class MovieEntity(
     val release_date: String? = null,
 
     @ColumnInfo(name = "vote_average")
-    val vote_average: String? = null,
+    val vote_average: Double = 0.0,
 
     @ColumnInfo(name = "poster_path")
     val poster_path: String? = null,

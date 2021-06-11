@@ -43,6 +43,8 @@ class FavoriteMovieAdapter : RecyclerView.Adapter<FavoriteMovieAdapter.ViewHolde
                 transformations(RoundedCornersTransformation(10f))
             }
             binding.tvTitle.text = movie.title
+            binding.ratingBar.rating = (movie.vote_average / 2).toFloat()
+            binding.tvRating.text = String.format("%.1f", (movie.vote_average / 2))
             binding.tvDescription.text = movie.overview
             itemView.setOnClickListener { onItemClickCallBack.onItemClicked(movie) }
         }

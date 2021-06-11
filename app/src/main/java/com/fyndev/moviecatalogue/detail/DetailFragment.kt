@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import coil.load
+import coil.transform.RoundedCornersTransformation
 import com.fyndev.moviecatalogue.R
 import com.fyndev.moviecatalogue.core.data.Resource
 import com.fyndev.moviecatalogue.core.domain.model.Movie
@@ -78,26 +79,28 @@ class DetailFragment : Fragment() {
     private fun populateMovies(movieEntity: Movie) {
         val imgUrl = "https://image.tmdb.org/t/p/w533_and_h300_bestv2"
         binding.ivBackdrop.load(imgUrl + movieEntity.backdrop_path) {
+            transformations(RoundedCornersTransformation(20f))
             crossfade(true)
             crossfade(1000)
         }
         title = movieEntity.title.toString()
         binding.tvTitle.text = movieEntity.title
         binding.tvDate.text = movieEntity.release_date
-        binding.tvRating.text = movieEntity.vote_average
+        binding.tvRating.text = String.format("%.1f", (movieEntity.vote_average / 2))
         binding.tvDescription.text = movieEntity.overview
     }
 
     private fun populateTvShow(tvShowEntity: TvShow) {
         val imgUrl = "https://image.tmdb.org/t/p/w533_and_h300_bestv2"
         binding.ivBackdrop.load(imgUrl + tvShowEntity.backdrop_path) {
+            transformations(RoundedCornersTransformation(20f))
             crossfade(true)
-            crossfade(1000)
+            crossfade(500)
         }
         title = tvShowEntity.name.toString()
         binding.tvTitle.text = tvShowEntity.name
         binding.tvDate.text = tvShowEntity.first_air_date
-        binding.tvRating.text = tvShowEntity.vote_average
+        binding.tvRating.text = String.format("%.1f", (tvShowEntity.vote_average / 2))
         binding.tvDescription.text = tvShowEntity.overview
     }
 

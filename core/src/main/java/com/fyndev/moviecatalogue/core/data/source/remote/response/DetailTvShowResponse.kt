@@ -16,7 +16,7 @@ data class DetailTvShowResponse(
     val first_air_date: String = "",
 
     @field:SerializedName("vote_average")
-    val vote_average: String = "",
+    val vote_average: Double = 0.0,
 
     @field:SerializedName("poster_path")
     val poster_path: String = "",
